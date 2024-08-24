@@ -1,0 +1,86 @@
+.searchbar-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .search-input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+  
+  .search-icon {
+    color: #6b7280;
+    margin-right: 0.5rem;
+  }
+  
+  .search-input {
+    flex-grow: 1;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: #374151;
+  }
+  
+  .search-input:focus {
+    outline: none;
+  }
+  
+  .recommendations-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+  }
+  
+  .recommendation-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .recommendation-item:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .kg-code {
+    font-weight: bold;
+    color: #4b5563;
+  }
+  
+  .kg-name {
+    color: #6b7280;
+  }
+
+  .selectionGrid {
+    background-color: #f3f4f6;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .content {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .card {
+    background-color: #d1d5db;
+    border-radius: 8px;
+    padding: 1rem;
+    flex-grow: 1;
+  }
+  
+  .searchBarContainer {
+    width: 300px;
+  }

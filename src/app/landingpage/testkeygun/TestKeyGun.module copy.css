@@ -1,0 +1,115 @@
+/* src/app/landingpage/testkeygun/TestKeyGun.module.css */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.keyGunGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.keyGunCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.keyGunCard:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.selectedCard {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.keyGunIcon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.keyGunName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.backButton, .testButton {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.backButton {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+.backButton:hover {
+  background-color: #d1d5db;
+}
+
+.testButton {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.testButton:hover {
+  background-color: #2563eb;
+}
+
+.testButton:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .keyGunGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .backButton, .testButton {
+    width: 100%;
+  }
+}
