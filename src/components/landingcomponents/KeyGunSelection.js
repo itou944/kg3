@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Check } from 'lucide-react';
+import { Check, ChevronDown } from 'lucide-react';
 import { addKeyGun, removeKeyGun } from '../../redux/features/keyGunsSlice';
+import { softwareCategories } from '../../constants/constants';
 import styles from './KeyGunSelection.module.css';
 
 const KeyGunSelection = () => {
   const dispatch = useDispatch();
   const { availableKeyGuns, selectedKeyGuns } = useSelector(state => state.keyGuns);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [filteredKeyGuns, setFilteredKeyGuns] = useState(availableKeyGuns);
+
+  useEffect(() => {
+    if (selectedCategory === 'All') {
+      setFilteredKeyGuns(availableKeyGuns);
+    } else {
+      setFilteredKeyGuns(availableKeyGuns.filter(keyGun => keyGun.category === selectedCategory));
+    }
+  }, [selectedCategory, availableKeyGuns]);
 
   const toggleKeyGun = (keyGun) => {
     if (selectedKeyGuns.find(kg => kg.id === keyGun.id)) {
@@ -21,8 +32,23 @@ const KeyGunSelection = () => {
       <div className={styles.card}>
         <h4 className={styles.title}>Select Your KeyGuns</h4>
         <p className={styles.subtitle}>Customize your learning tools (Select up to 4)</p>
+        <div className={styles.categoryFilter}>
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className={styles.categorySelect}
+          >
+            <option value="All">All Categories</option>
+            {softwareCategories.map(category => (
+              <option key={category.id} value={category.name}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+          <ChevronDown className={styles.selectIcon} />
+        </div>
         <div className={styles.keygunGrid}>
-          {availableKeyGuns.map((keyGun) => (
+          {filteredKeyGuns.map((keyGun) => (
             <div
               key={keyGun.id}
               className={`${styles.keygunIcon} ${selectedKeyGuns.find(kg => kg.id === keyGun.id) ? styles.selectedKeygun : ''}`}

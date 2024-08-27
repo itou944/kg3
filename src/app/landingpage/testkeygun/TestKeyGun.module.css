@@ -107,8 +107,19 @@
   border-color: #3b82f6;
   outline: none;
 }
+/*ask button*/
+
+@keyframes loadingDots {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+  100% { content: ''; }
+}
+
 
 .askButton {
+  position: relative;
   padding: 0.75rem 1.5rem;
   background-color: #3b82f6;
   color: #ffffff;
@@ -119,6 +130,17 @@
   transition: background-color 0.3s ease;
 }
 
+.askButton:disabled {
+  /* Your existing disabled button styles */
+  cursor: not-allowed;
+}
+
+.askButton:disabled::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  animation: loadingDots 1.5s infinite;
+}
 .askButton:hover {
   background-color: #2563eb;
 }

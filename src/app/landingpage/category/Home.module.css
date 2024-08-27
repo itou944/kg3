@@ -1,0 +1,168 @@
+.keygunSelection {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.categoryScrollContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.scrollButton {
+  position: absolute;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.categoryList {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+.categoryCard {
+  background-color: #fff;
+  border-radius: 8px;
+  margin-right: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
+  transition: transform 0.3s;
+}
+
+.categoryCard:hover {
+  transform: scale(1.05);
+}
+
+.selected {
+  border: 2px solid #007bff;
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.categoryIcon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.categoryName {
+  flex-grow: 1;
+}
+
+.expandButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.toolList {
+  margin-top: 10px;
+}
+
+.toolItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.toolName {
+  margin-left: 5px;
+}
+
+.selectedKeyguns {
+  margin-top: 30px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.selectedGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.selectedSlot {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.selectedItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selectedIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.selectedName {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.selectedTool {
+  font-size: 14px;
+  color: #777;
+}
+
+.emptySlot {
+  color: #bbb;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.primaryButton, .secondaryButton {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.primaryButton {
+  background-color: #007bff;
+}

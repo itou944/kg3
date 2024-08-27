@@ -1,5 +1,7 @@
+//src/lib/openai.js
+
+// src/lib/openai.js
 import axios from 'axios';
-import { BOT_ROLES } from '../constants/constants';
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
@@ -11,14 +13,17 @@ const openaiClient = axios.create({
   }
 });
 
-export const generateBotResponse = async (query, botName) => {
-  const role = BOT_ROLES[botName.toUpperCase()] || BOT_ROLES.BLENDER; // Default to Blender if bot not found
+export const generateBotResponse = async (query, keyGunId) => {
+  const service = servicesPreprompt.find(s => s.id === keyGunId);
+  if (!service) {
+    throw new Error('Invalid service ID');
+  }
 
   try {
     const response = await openaiClient.post('', {
       model: "gpt-3.5-turbo",
       messages: [
-        { role: 'system', content: role },
+        { role: 'system', content: service.prompt },
         { role: 'user', content: query }
       ],
       temperature: 0.7,

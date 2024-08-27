@@ -32,14 +32,14 @@ const Home = () => {
       <main className={styles.main}>
         <Hero />
         <section className={styles.selectionPages}>
-          <KeyGunSelection />
-          <button 
+          <KeyGunSelection /><button 
             className={styles.primaryButton} 
             onClick={handleTestKeyGuns}
             disabled={selectedKeyGuns.length !== 4}
           >
             Test Selected KeyGuns
           </button>
+          
         </section>
         <Features />
       </main>
