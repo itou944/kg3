@@ -40,15 +40,24 @@
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease-in-out;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.keygunIcon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .selectedKeygun {
-  background-color: #EBF5FF;
-  border: 2px solid #3B82F6;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
+  background-color: #e6f7ff;
+  box-shadow: 0 4px 6px rgba(0, 100, 255, 0.2);
 }
 
+.selectedKeygun:hover {
+  box-shadow: 0 6px 12px rgba(0, 100, 255, 0.25);
+}
 .iconImage {
   width: 4rem;
   height: 4rem;
@@ -64,12 +73,15 @@
 
 .tickMark {
   position: absolute;
-  top: -0.5rem;
-  right: -0.5rem;
-  background-color: #3B82F6;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: #1890ff;
   color: white;
-  border-radius: 9999px;
-  padding: 0.25rem;
+  border-radius: 50%;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttonGroup {
@@ -141,4 +153,30 @@
   .button {
     width: 100%;
   }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.paginationButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  margin: 0 1rem;
 }

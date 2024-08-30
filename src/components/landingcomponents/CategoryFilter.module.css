@@ -1,0 +1,36 @@
+/* CategoryFilter.module.css */
+.categoryFilter {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 25 ;
+  }
+  
+  .categorySelect {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+    margin-bottom: 25
+  }
+  
+  .categorySelect:focus {
+    border-color: #007bff;
+  }
+  
+  .selectIcon {
+    position: absolute;
+    right: 12px;
+    pointer-events: none;
+    fill: #777;
+  }
+  

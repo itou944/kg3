@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Check, ChevronDown } from 'lucide-react';
+import { Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { addKeyGun, removeKeyGun } from '../../redux/features/keyGunsSlice';
 import { softwareCategories } from '../../constants/constants';
 import styles from './KeyGunSelection.module.css';
+import CategoryFilter from './CategoryFilter';
+
+const ITEMS_PER_PAGE = 9;
 
 const KeyGunSelection = () => {
   const dispatch = useDispatch();
   const { availableKeyGuns, selectedKeyGuns } = useSelector(state => state.keyGuns);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [filteredKeyGuns, setFilteredKeyGuns] = useState(availableKeyGuns);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     if (selectedCategory === 'All') {
@@ -17,6 +21,7 @@ const KeyGunSelection = () => {
     } else {
       setFilteredKeyGuns(availableKeyGuns.filter(keyGun => keyGun.category === selectedCategory));
     }
+    setCurrentPage(1);
   }, [selectedCategory, availableKeyGuns]);
 
   const toggleKeyGun = (keyGun) => {
@@ -27,28 +32,32 @@ const KeyGunSelection = () => {
     }
   };
 
+  const totalPages = Math.ceil(filteredKeyGuns.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const displayedKeyGuns = filteredKeyGuns.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const goToNextPage = () => {
+    setCurrentPage(prev => Math.min(prev + 1, totalPages));
+  };
+
+  const goToPrevPage = () => {
+    setCurrentPage(prev => Math.max(prev - 1, 1));
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.card}>
         <h4 className={styles.title}>Select Your KeyGuns</h4>
         <p className={styles.subtitle}>Customize your learning tools (Select up to 4)</p>
         <div className={styles.categoryFilter}>
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className={styles.categorySelect}
-          >
-            <option value="All">All Categories</option>
-            {softwareCategories.map(category => (
-              <option key={category.id} value={category.name}>
-                {category.name}
-              </option>
-            ))}
-          </select>
-          <ChevronDown className={styles.selectIcon} />
+          <CategoryFilter
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            softwareCategories={softwareCategories}
+          />
         </div>
         <div className={styles.keygunGrid}>
-          {filteredKeyGuns.map((keyGun) => (
+          {displayedKeyGuns.map((keyGun) => (
             <div
               key={keyGun.id}
               className={`${styles.keygunIcon} ${selectedKeyGuns.find(kg => kg.id === keyGun.id) ? styles.selectedKeygun : ''}`}
@@ -64,9 +73,27 @@ const KeyGunSelection = () => {
             </div>
           ))}
         </div>
+        <div className={styles.pagination}>
+          <button 
+            onClick={goToPrevPage} 
+            disabled={currentPage === 1}
+            className={styles.paginationButton}
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <span className={styles.pageInfo}>
+            Page {currentPage} of {totalPages}
+          </span>
+          <button 
+            onClick={goToNextPage} 
+            disabled={currentPage === totalPages}
+            className={styles.paginationButton}
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
         <div className={styles.buttonGroup}>
-          <button className={styles.button}>Search KeyGuns</button>
-          <button className={styles.button}>Create KeyGuns</button>
+     
         </div>
       </div>
       <div className={styles.rightColumn}>
