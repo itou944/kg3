@@ -1,0 +1,45 @@
+.colorfulButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #0008ff, #00ffff);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .colorfulButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #0e00d7, #ff00ff);
+  }
+  
+  .colorfulButton:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .colorfulButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .colorfulButton:not(:disabled) {
+    animation: pulse 2s infinite;
+  }

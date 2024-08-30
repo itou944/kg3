@@ -66,7 +66,6 @@ const KeyGunSelection = () => {
         </div>
         <div className={styles.buttonGroup}>
           <button className={styles.button}>Search KeyGuns</button>
-          <button className={styles.button}>Test KeyGuns</button>
           <button className={styles.button}>Create KeyGuns</button>
         </div>
       </div>

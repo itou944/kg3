@@ -243,7 +243,6 @@ const KeyGunSelection = () => {
       </div>
       
       <div className={styles.actionButtons}>
-        <button className={styles.primaryButton}>Test KeyGuns</button>
         <button className={styles.secondaryButton}>Create KeyGun</button>
       </div>
     </div>

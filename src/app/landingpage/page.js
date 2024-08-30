@@ -12,7 +12,7 @@ import Footer from '../../components/landingcomponents/Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/navigation';
 import KeyGunSelection from '../../components/landingcomponents/KeyGunSelection';
-
+import ColorfulButton from '@/components/landingcomponents/ColorfulButton';
 
 const Home = () => {
   const router = useRouter();
@@ -32,13 +32,19 @@ const Home = () => {
       <main className={styles.main}>
         <Hero />
         <section className={styles.selectionPages}>
-          <KeyGunSelection /><button 
-            className={styles.primaryButton} 
-            onClick={handleTestKeyGuns}
-            disabled={selectedKeyGuns.length !== 4}
-          >
-            Test Selected KeyGuns
-          </button>
+        <ColorfulButton
+  onClick={handleTestKeyGuns}
+  disabled={selectedKeyGuns.length !== 4}
+>
+  Test Selected KeyGuns
+</ColorfulButton>
+          <KeyGunSelection />
+          <ColorfulButton
+  onClick={handleTestKeyGuns}
+  disabled={selectedKeyGuns.length !== 4}
+>
+  Test Selected KeyGuns
+</ColorfulButton>
           
         </section>
         <Features />

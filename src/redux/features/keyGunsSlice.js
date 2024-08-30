@@ -19,6 +19,7 @@ const initialState = {
     { id: 13, name: 'Figma', icon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg', category: 'Design' },
     { id: 14, name: 'Trello', icon: 'https://upload.wikimedia.org/wikipedia/en/8/8c/Trello_logo.svg', category: 'Project Management' },
     { id: 15, name: 'GitLab', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c8/GitLab_logo_%282%29.svg', category: 'Version Control' },
+    { id: 16, name: 'Fruity Loops', icon: 'https://upload.wikimedia.org/wikipedia/fr/e/ef/FL-Studio-12-Logo.png', category: 'Audio Production & Music' },
   ],
   selectedKeyGuns: [],
 };
