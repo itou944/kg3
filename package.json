@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@algolia/autocomplete-js": "^1.17.4",
+    "@algolia/autocomplete-theme-classic": "^1.17.4",
     "@radix-ui/react-avatar": "^1.1.0",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-scroll-area": "^1.1.0",
@@ -16,6 +18,7 @@
     "@reduxjs/toolkit": "^2.2.7",
     "@tanstack/react-query": "^5.51.24",
     "@tanstack/react-query-devtools": "^5.51.24",
+    "algoliasearch": "^4.24.0",
     "axios": "^1.7.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -26,6 +29,7 @@
     "openai": "^4.55.9",
     "react": "^18",
     "react-dom": "^18",
+    "react-instantsearch-dom": "^6.40.4",
     "react-query": "^3.39.3",
     "react-redux": "^9.1.2",
     "react-typing-effect": "^2.0.5",

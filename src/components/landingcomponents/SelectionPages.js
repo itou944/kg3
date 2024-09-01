@@ -27,7 +27,7 @@ const KeyGunSelection = () => {
   const toggleKeyGun = (keyGun) => {
     if (selectedKeyGuns.find(kg => kg.id === keyGun.id)) {
       dispatch(removeKeyGun(keyGun));
-    } else if (selectedKeyGuns.length < 4) {
+    } else if (selectedKeyGuns.length < 1) {
       dispatch(addKeyGun(keyGun));
     }
   };

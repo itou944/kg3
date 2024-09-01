@@ -1,0 +1,110 @@
+.container {
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 1200px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .autocomplete {
+    position: relative;
+    width: 100%;
+  }
+  
+  .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .suggestion {
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .suggestion:hover {
+    background: #f0f0f0;
+  }
+  
+  .suggestionIcon {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.75rem;
+    border-radius: 4px;
+  }
+  
+  .suggestionCategory {
+    font-size: 0.875rem;
+    color: #888;
+    margin-top: 0.25rem;
+  }
+  
+  .content {
+    display: flex;
+    margin-top: 2rem;
+  }
+  
+  .facets {
+    flex: 1;
+    margin-right: 2rem;
+  }
+  
+  .facetsTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .results {
+    flex: 3;
+  }
+  
+  .hitCard {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .hitCard:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hitHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hitIcon {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border-radius: 4px;
+  }
+  
+  .hitTitle {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .hitCategory {
+    font-size: 1rem;
+    color: #666;
+  }
+  
